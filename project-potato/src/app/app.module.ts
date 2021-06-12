@@ -6,23 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { environment } from 'src/environments/environment';
+import { OverviewModule } from './overview/overview.module';
+import { RecipesModule } from './recipes/recipes.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-
-  ],
-  import { OverviewModule } from './overview/overview.module';
-  import { RecipesModule } from './recipes/recipes.module';
-
-@NgModule({
-    declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, OverviewModule, RecipesModule],
-    providers: [],
-    bootstrap: [AppComponent],
-  })
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, OverviewModule, RecipesModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
 export class AppModule { }
