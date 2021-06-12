@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipesService } from './recipes/recipes.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-potato';
+
+  constructor(private recipeModel: RecipesService) {
+    console.log("AppComponent Constructor");
+  }
+
+  ngOnInit(): void {
+    console.log("AppComponent: ngInit");
+  }
 }
