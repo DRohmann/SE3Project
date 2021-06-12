@@ -4,7 +4,7 @@ import { never } from 'rxjs';
 
 import { Recipe, RecipesService } from './recipes.service';
 
-fdescribe('RecipesService', () => {
+describe('RecipesService', () => {
   let service: RecipesService;
   let fixture: ComponentFixture<RecipesService>;
 
@@ -22,7 +22,7 @@ fdescribe('RecipesService', () => {
     expect(service.recipes.length).toBeGreaterThan(0);
   });
 
-  fit('should map the Firebase-Item correctly', () => {
+  it('should map the Firebase-Item correctly', () => {
     const documentDataSpy = jasmine.createSpyObj("DocumentData", ["id", "data"]);
     const dataMock = {
       duration: "duration",
