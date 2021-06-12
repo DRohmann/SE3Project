@@ -1,3 +1,6 @@
 <h1 id="title">{{ title }}</h1>
-<app-overview></app-overview>
-<app-recipes></app-recipes>
+
+<button id="overview" routerLink="/overview-component">Übersicht</button>
+<button id="recipe" routerLink="/recipe-component">Rezepte</button>
+
+<router-outlet></router-outlet>
