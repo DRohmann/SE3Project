@@ -28,4 +28,20 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement.querySelector('#title');
     expect(compiled.innerHTML).toContain('project-potato');
   });
+
+  it('should show Button Overview', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const button = fixture.nativeElement.querySelector('#overview');
+
+    expect(button.textContent).toContain('Übersicht');
+  });
+
+  it('should show Button Recipe', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const button = fixture.nativeElement.querySelector('#recipe');
+
+    expect(button.textContent).toContain('Rezepte');
+  });
 });
