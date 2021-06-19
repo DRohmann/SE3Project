@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DocumentData, QuerySnapshot } from "firebase/firestore"
 import { never } from 'rxjs';
 
-import { Recipe, Ingredients } from './recipes.service';
-import { RecipesService } from './recipesService.service';
+import { Recipe, Ingredients } from '../models/recipe.model';
+import { RecipesService } from './recipes.service';
 
 describe('RecipesService', () => {
   let service: RecipesService;
@@ -25,10 +25,10 @@ describe('RecipesService', () => {
 
   it('should map the Firebase-Item correctly', () => {
     const documentDataSpy = jasmine.createSpyObj("DocumentData", ["id", "data"]);
-    
+
     const idMock = "A1";
     const dataMockIngredients = {
-      name: "name", 
+      name: "name",
       amount: 1,
       unit: "unit"
     }
@@ -39,7 +39,7 @@ describe('RecipesService', () => {
       type: "type",
       ingredients: dataMockIngredients,
     }
-    
+
 
     documentDataSpy.id.and.returnValue(idMock);
     documentDataSpy.data.and.returnValue(dataMock);
