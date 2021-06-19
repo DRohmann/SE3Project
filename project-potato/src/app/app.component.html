@@ -1,3 +1,28 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyApeRobesP71TX5fNlF3QgdfKHG_-8uPis",
+    authDomain: "project-potato-a6e04.firebaseapp.com",
+    projectId: "project-potato-a6e04",
+    storageBucket: "project-potato-a6e04.appspot.com",
+    messagingSenderId: "712234348448",
+    appId: "1:712234348448:web:82156cfa3f0021d18a3ec5",
+    measurementId: "G-G05QBNGT6V"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<router-outlet></router-outlet>
 <h1 id="title">{{ title }}</h1>
 
 <button id="overview" routerLink="/overview-component">Übersicht</button>

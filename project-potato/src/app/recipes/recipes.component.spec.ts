@@ -6,16 +6,16 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { RecipesComponent } from './recipes.component';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 
-fdescribe('RecipesComponent', () => {
+describe('RecipesComponent', () => {
   let component: RecipesComponent;
   let fixture: ComponentFixture<RecipesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecipesComponent ],
-      imports: [ ReactiveFormsModule ],
+      declarations: [RecipesComponent],
+      imports: [ReactiveFormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -28,7 +28,7 @@ fdescribe('RecipesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("test string", () =>{
+  it("test string", () => {
     const title = fixture.debugElement.nativeElement.querySelector('#title');
     expect(title.innerHTML).toBe('Recipes');
   });
