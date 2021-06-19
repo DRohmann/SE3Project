@@ -2,7 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DocumentData, QuerySnapshot } from "firebase/firestore"
 import { never } from 'rxjs';
 
-import { Recipe, RecipesService } from './recipes.service';
+import { Recipe, Ingredients } from './recipes.service';
+import { RecipesService } from './recipesService.service';
 
 describe('RecipesService', () => {
   let service: RecipesService;
@@ -24,24 +25,32 @@ describe('RecipesService', () => {
 
   it('should map the Firebase-Item correctly', () => {
     const documentDataSpy = jasmine.createSpyObj("DocumentData", ["id", "data"]);
+    
+    const idMock = "A1";
+    const dataMockIngredients = {
+      name: "name", 
+      amount: 1,
+      unit: "unit"
+    }
     const dataMock = {
       duration: "duration",
       text: "text",
       title: "title",
-      type: "type"
+      type: "type",
+      ingredients: dataMockIngredients,
     }
+    
 
-    documentDataSpy.id.and.returnValue("id");
-    console.log(documentDataSpy.id);
+    documentDataSpy.id.and.returnValue(idMock);
     documentDataSpy.data.and.returnValue(dataMock);
-    console.log(documentDataSpy.data);
     const testRecipe = service.map(documentDataSpy);
 
-    const goalRecipe = new Recipe("id", "title", "text", "duration", "type");
-    console.log("test");
-    console.log(testRecipe);
-    console.log("goal");
-    console.log(goalRecipe);
-    expect(testRecipe).toEqual(goalRecipe);
+    var ingredientsArray: Array<Ingredients> = [new Ingredients("name", 1, "unit")];
+    const goalRecipe = new Recipe("id", "title", "text", "duration", "type", ingredientsArray);
+    // expect(testRecipe).toEqual(goalRecipe);
+    expect(testRecipe.title).toEqual(goalRecipe.title);
+    expect(testRecipe.text).toEqual(goalRecipe.text);
+    expect(testRecipe.duration).toEqual(goalRecipe.duration);
+    expect(testRecipe.type).toEqual(goalRecipe.type);
   });
 });
