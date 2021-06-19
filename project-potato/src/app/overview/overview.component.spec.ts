@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OverviewComponent } from './overview.component';
 
@@ -8,9 +8,8 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OverviewComponent ]
-    })
-    .compileComponents();
+      declarations: [OverviewComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +21,22 @@ describe('OverviewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get recipes from recipe.service', () => {
+    fixture.whenStable().then(() => {
+      const test = component.service.recipes.length;
+      fixture.detectChanges();
+      expect(test).toBeGreaterThan(0);
+    });
+  });
+
+  fit(
+    'should display Data in Table',
+    waitForAsync(() => {
+      fixture.detectChanges();
+      const compiled = fixture.debugElement.nativeElement;
+
+      expect(compiled.querySelector('td').textContent).toContain('Salzwasser');
+    })
+  );
 });
