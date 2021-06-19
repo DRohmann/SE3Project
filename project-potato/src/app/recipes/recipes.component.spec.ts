@@ -24,16 +24,16 @@ fdescribe('RecipesComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  fit("test string", () =>{
+  it("test string", () =>{
     const title = fixture.debugElement.nativeElement.querySelector('#title');
     expect(title.innerHTML).toBe('Recipes');
   });
 
-  fit("table existence", () => {
+  it("table existence", () => {
     const src = component.recipeGroup;
     expect(src).toBeDefined();
   });
