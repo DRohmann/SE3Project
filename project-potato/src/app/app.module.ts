@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { environment } from 'src/environments/environment';
 import { OverviewModule } from './overview/overview.module';
 import { RecipesModule } from './recipes/recipes.module';
 
@@ -14,4 +15,4 @@ import { RecipesModule } from './recipes/recipes.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
