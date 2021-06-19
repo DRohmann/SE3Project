@@ -9,6 +9,22 @@ describe('RecipesService', () => {
   let service: RecipesService;
   let fixture: ComponentFixture<RecipesService>;
 
+  const modelIngredients: Array<Ingredients> = [new Ingredients("name", 1, "unit")];
+  const modelRecipe = new Recipe("id", "title", "text", "duration", "type", modelIngredients);
+
+  const docIngredients = {
+    name: "name",
+    amount: 1,
+    unit: "unit"
+  }
+  const docRecipe = {
+    duration: "duration",
+    text: "text",
+    title: "title",
+    type: "type",
+    ingredients: docIngredients,
+  }
+
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.get(RecipesService);
@@ -27,30 +43,20 @@ describe('RecipesService', () => {
     const documentDataSpy = jasmine.createSpyObj("DocumentData", ["id", "data"]);
 
     const idMock = "A1";
-    const dataMockIngredients = {
-      name: "name",
-      amount: 1,
-      unit: "unit"
-    }
-    const dataMock = {
-      duration: "duration",
-      text: "text",
-      title: "title",
-      type: "type",
-      ingredients: dataMockIngredients,
-    }
-
 
     documentDataSpy.id.and.returnValue(idMock);
-    documentDataSpy.data.and.returnValue(dataMock);
-    const testRecipe = service.map(documentDataSpy);
+    documentDataSpy.data.and.returnValue(docRecipe);
+    const testRecipe = service.mapDocToModel(documentDataSpy);
 
-    var ingredientsArray: Array<Ingredients> = [new Ingredients("name", 1, "unit")];
-    const goalRecipe = new Recipe("id", "title", "text", "duration", "type", ingredientsArray);
-    // expect(testRecipe).toEqual(goalRecipe);
-    expect(testRecipe.title).toEqual(goalRecipe.title);
-    expect(testRecipe.text).toEqual(goalRecipe.text);
-    expect(testRecipe.duration).toEqual(goalRecipe.duration);
-    expect(testRecipe.type).toEqual(goalRecipe.type);
+    expect(testRecipe.title).toEqual(modelRecipe.title);
+    expect(testRecipe.text).toEqual(modelRecipe.text);
+    expect(testRecipe.duration).toEqual(modelRecipe.duration);
+    expect(testRecipe.type).toEqual(modelRecipe.type);
+  });
+
+  it('should map the Recipe-Item correctly', () => {
+    const testRecipe = service.mapModelToDoc(modelRecipe)
+
+    expect(testRecipe).toEqual(docRecipe);
   });
 });
