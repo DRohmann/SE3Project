@@ -1,14 +1,14 @@
-<table>
-  <thead>
-    <th>Titel</th>
-    <th>Bezeichnung</th>
-    <th>Zubereitungsdauer</th>
-  </thead>
-  <tbody *ngFor="let recipe of this.service.recipes">
-    <tr>
-      <td>{{ recipe.title }}</td>
-      <td>{{ recipe.text }}</td>
-      <td>{{ recipe.duration }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table id=recipeTable>
+    <thead>
+        <th>Titel</th>
+        <th>Bezeichnung</th>
+        <th>Zubereitungsdauer</th>
+    </thead>
+    <tbody *ngFor="let recipe of this.service.recipes">
+      <tr>
+          <td>{{ recipe.title }}</td>
+          <td>{{ recipe.text }}</td>
+          <td>{{ recipe.duration }}</td>
+      </tr>
+    </tbody>
+  </table>
