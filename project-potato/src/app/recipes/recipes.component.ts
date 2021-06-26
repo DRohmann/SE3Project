@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
+import { Recipe, Ingredients } from '../models/recipe.model';
+import { RecipesService } from './recipes.service';
 
-// export interface Recipe {
-//   name: string;
-//   preparation: string;
-//   weight: Ingredient[];
-// }
-// export interface Ingredient{
-
-// }
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -18,32 +12,41 @@ import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 
 
 export class RecipesComponent implements OnInit {
+  service: RecipesService;
+  public DEFAULT_ID:string = "default"; //id set in firebase
 
   recipeGroup: FormGroup;
-  columns: string[];
+  ingredientGroup: FormGroup;
+  ingredients: boolean;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.columns = ["Name", "Typ", "Dauer"];
-    this.recipeGroup = this.formBuilder.group({
-      tableRowArray: this.formBuilder.array([
-        this.createTableRow()
-      ])
-    })
+  
+  constructor(builder: FormBuilder) {
+    this.service = new RecipesService();
+    this.recipeGroup = builder.group({
+      title: new FormControl(),
+      text: new FormControl(),
+      duration: new FormControl(),
+      type: new FormControl()
+    });
+    this.ingredientGroup = builder.group({
+      name: new FormControl(),
+      amount: new FormControl(),
+      unit: new FormControl(),
+    });
+    this.ingredients = false;
   }
 
-  getRecipes():  FormArray {
-    return this.recipeGroup.get('tableRowArray') as FormArray;
+  public addNewIngredient(){
+    this.ingredients = true;
   }
 
-  createTableRow(): FormGroup {
-    return this.formBuilder.group({
-      name: new FormControl(null,{}),
-      type: new FormControl(null,{}),
-      duration: new FormControl(null,{}),
-    })
+  public saveRecipe(){
+    var ingredientsArray: Array<Ingredients> = [new Ingredients(this.ingredientGroup.controls.Name.value, this.ingredientGroup.controls.amount.value, this.ingredientGroup.controls.unit.value)];
+    var recipe = new Recipe(this.DEFAULT_ID, this.recipeGroup.controls.title.value, this.recipeGroup.controls.text.value, this.recipeGroup.controls.duration.value, this.recipeGroup.controls.type.value, ingredientsArray );
+    this.service.saveNewRecipe(recipe); 
+    return recipe;
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
   }
 }
