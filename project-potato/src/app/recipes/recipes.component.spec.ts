@@ -27,11 +27,6 @@ describe('RecipesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("test string", () => {
-    const title = fixture.debugElement.nativeElement.querySelector('#title');
-    expect(title.innerHTML).toBe('Recipes');
-  });
-
   it("check Button Ingredients", () => {
     const button = fixture.debugElement.nativeElement.querySelector('#newIngredient');
     expect(button.innerHTML).toContain('Neue Zutat hinzufügen');
