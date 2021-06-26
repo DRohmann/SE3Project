@@ -3,21 +3,29 @@ import { DocumentData, QuerySnapshot } from "firebase/firestore"
 import { never } from 'rxjs';
 
 import { Recipe } from '../models/recipe.model';
-import { Ingredient } from '../models/ingredients.model';
+import { Ingredient } from '../models/ingredient.model';
 import { RecipesService } from './recipes.service';
 
 describe('RecipesService', () => {
   let service: RecipesService;
   let fixture: ComponentFixture<RecipesService>;
 
-  const modelIngredients: Array<Ingredient> = [new Ingredient("name", 1, "unit")];
+  const modelIngredients: Array<Ingredient> = [new Ingredient("name1", "amount1", "unit1"), new Ingredient("name2", "amount2", "unit2")];
   const modelRecipe = new Recipe("id", "title", "text", "duration", "type", modelIngredients);
 
-  const docIngredients = {
-    name: "name",
-    amount: 1,
-    unit: "unit"
-  }
+  const docIngredients = [
+    {
+      name: "name1",
+      amount: "amount1",
+      unit: "unit1"
+    },
+    {
+      name: "name2",
+      amount: "amount2",
+      unit: "unit2"
+    }
+  ]
+
   const docRecipe = {
     duration: "duration",
     text: "text",

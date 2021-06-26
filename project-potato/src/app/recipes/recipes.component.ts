@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
-import { Ingredient } from '../models/ingredients.model';
+import { Ingredient } from '../models/ingredient.model';
 import { Recipe } from '../models/recipe.model';
 import { RecipesService } from './recipes.service';
 
@@ -14,14 +14,14 @@ import { RecipesService } from './recipes.service';
 
 export class RecipesComponent implements OnInit {
 
-  public static DEFAULT_ID:string = "default"; //id set in firebase
+  public static DEFAULT_ID: string = "default"; //id set in firebase
 
   service: RecipesService;
   recipeGroup: FormGroup;
   ingredientGroup: FormGroup;
   hasIngredients: boolean;
 
-  
+
   constructor(builder: FormBuilder) {
     this.service = new RecipesService();
     this.recipeGroup = builder.group({
@@ -38,7 +38,7 @@ export class RecipesComponent implements OnInit {
     this.hasIngredients = false;
   }
 
-  addNewIngredient(): void{
+  addNewIngredient(): void {
     this.hasIngredients = true;
   }
 
@@ -53,6 +53,6 @@ export class RecipesComponent implements OnInit {
     return recipe;
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 }

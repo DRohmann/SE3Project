@@ -5,6 +5,7 @@ import { initializeApp, getApps, getApp } from "firebase/app"
 import { addDoc, collection, doc, DocumentData, getDocs, getFirestore, setDoc } from "firebase/firestore"
 import { environment } from 'src/environments/environment'
 import { Recipe } from '../models/recipe.model'
+import { Ingredient } from '../models/ingredient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,15 +37,35 @@ export class RecipesService {
 
   public mapDocToModel(documentData: DocumentData): Recipe {
     const data = documentData.data();
-    return new Recipe(documentData.id, data.title, data.text, data.duration, data.type, data.ingredients)
+    return new Recipe(documentData.id, data.title, data.text, data.duration, data.type, this.mapDocToModel_Ingredients(data.ingredients));
+  }
+
+  public mapDocToModel_Ingredients(ingredients: []): Ingredient[] {
+    JSON.stringify(ingredients);
+    if (!ingredients)
+      return [];
+
+    var returnIngredients: Ingredient[] = [];
+    ingredients.forEach(ingredient => {
+      returnIngredients.push(new Ingredient(ingredient["name"], ingredient["amount"], ingredient["unit"]));
+    });
+
+    return returnIngredients;
   }
 
   public mapModelToDoc(recipe: Recipe): object {
+    var ingredients: object[];
+    ingredients = [];
+    recipe.ingredients.forEach(ingredient => {
+      ingredients.push(ingredient.toJSON());
+    });
+
     return {
       title: recipe.title,
       text: recipe.text,
       duration: recipe.duration,
       type: recipe.type,
+      ingredients: ingredients
     }
   }
 
