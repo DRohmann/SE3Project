@@ -1,10 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { RecipesComponent } from './recipes.component';
-import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { Recipe } from '../models/recipe.model';
 import { Ingredient } from '../models/ingredient.model'
 

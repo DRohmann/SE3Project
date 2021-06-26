@@ -1,9 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DocumentData, QuerySnapshot } from "firebase/firestore"
-import { never } from 'rxjs';
-
-import { Recipe } from '../models/recipe.model';
-import { Ingredient } from '../models/ingredient.model';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Recipe } from '../../models/recipe.model';
+import { Ingredient } from '../../models/ingredient.model';
 import { RecipesService } from './recipes.service';
 
 describe('RecipesService', () => {
