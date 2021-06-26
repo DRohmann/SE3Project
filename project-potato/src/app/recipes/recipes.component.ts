@@ -42,10 +42,14 @@ export class RecipesComponent implements OnInit {
     this.hasIngredients = true;
   }
 
-  saveRecipe(): Recipe{
-    let ingredientsArray: Array<Ingredient> = [new Ingredient(this.ingredientGroup.controls.Name.value, this.ingredientGroup.controls.amount.value, this.ingredientGroup.controls.unit.value)];
-    let recipe: Recipe = new Recipe(RecipesComponent.DEFAULT_ID, this.recipeGroup.controls.title.value, this.recipeGroup.controls.text.value, this.recipeGroup.controls.duration.value, this.recipeGroup.controls.type.value, ingredientsArray );
+  saveRecipe(): void{
+    let recipe = this.getRecipe();
     this.service.saveNewRecipe(recipe);
+  }
+
+  getRecipe(): Recipe{
+    let ingredientsArray: Array<Ingredient> = [new Ingredient(this.ingredientGroup.controls.name.value, this.ingredientGroup.controls.amount.value, this.ingredientGroup.controls.unit.value)];
+    let recipe: Recipe = new Recipe(RecipesComponent.DEFAULT_ID, this.recipeGroup.controls.title.value, this.recipeGroup.controls.text.value, this.recipeGroup.controls.duration.value, this.recipeGroup.controls.type.value, ingredientsArray );
     return recipe;
   }
 

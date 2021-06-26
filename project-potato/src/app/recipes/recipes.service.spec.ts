@@ -2,14 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DocumentData, QuerySnapshot } from "firebase/firestore"
 import { never } from 'rxjs';
 
-import { Recipe, Ingredients } from '../models/recipe.model';
+import { Recipe } from '../models/recipe.model';
+import { Ingredient } from '../models/ingredients.model';
 import { RecipesService } from './recipes.service';
 
 describe('RecipesService', () => {
   let service: RecipesService;
   let fixture: ComponentFixture<RecipesService>;
 
-  const modelIngredients: Array<Ingredients> = [new Ingredients("name", 1, "unit")];
+  const modelIngredients: Array<Ingredient> = [new Ingredient("name", 1, "unit")];
   const modelRecipe = new Recipe("id", "title", "text", "duration", "type", modelIngredients);
 
   const docIngredients = {

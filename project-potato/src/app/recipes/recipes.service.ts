@@ -28,7 +28,7 @@ export class RecipesService {
   }
 
   public async getCollection(): Promise<void> {
-    const querySnapshot = await getDocs(collection(this._db, "Rezepte"));
+    const querySnapshot = await getDocs(collection(this._db, "Recipes"));
     querySnapshot.forEach((doc) => {
       this._recipes.push(this.mapDocToModel(doc));
     });
