@@ -1,4 +1,21 @@
 <title id="title">Recipes</title>
 
-<h1>Rezepte works!</h1>
-<table id="table" dataSource="recipeGroup"></table>
+<!-- <h1>Rezepte works!</h1> -->
+<h1> </h1>
+
+<form [formGroup]="recipeGroup">
+    <input type="text" name="title"    formControlName="title"    placeholder="Titel"/>
+    <input type="text" name="text"     formControlName="text"     placeholder="Beschreibung"/>
+    <input type="text" name="duration" formControlName="duration" placeholder="Dauer"/>
+    <input type="text" name="type"     formControlName="type"     placeholder="Typ"/>
+</form>
+
+<button id="newIngredient" (click)="addNewIngredient()">Neue Zutat hinzufügen</button>
+
+<form [formGroup]="ingredientGroup" *ngIf="ingredients">
+    <input type="text"   name="name"   formControlName="name"   placeholder="Titel"/>
+    <input type="number" name="amount" formControlName="amount" placeholder="Menge"/>
+    <input type="text"   name="unit"   formControlName="unit"   placeholder="Einheit"/>
+</form>
+
+<button id="newRecipe" (click)="saveRecipe()">Rezept speichern</button>

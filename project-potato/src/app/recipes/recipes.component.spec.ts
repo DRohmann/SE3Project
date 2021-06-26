@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { RecipesComponent } from './recipes.component';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
+import { Ingredients, Recipe } from '../models/recipe.model';
+// import { rootCertificates } from 'tls';
 
 describe('RecipesComponent', () => {
   let component: RecipesComponent;
@@ -33,8 +35,37 @@ describe('RecipesComponent', () => {
     expect(title.innerHTML).toBe('Recipes');
   });
 
-  it("table existence", () => {
-    const src = component.recipeGroup;
-    expect(src).toBeDefined();
-  });
+  it("check Button Ingredients", () =>{
+    const button = fixture.debugElement.nativeElement.querySelector('#newIngredient');
+    expect(button.innerHTML).toContain('Neue Zutat hinzufügen');
+  })
+
+  it("ckeck Button Recipe", () =>{
+    const button = fixture.debugElement.nativeElement.querySelector('#newRecipe');
+    expect(button.innerHTML).toContain('Rezept speichern');
+  })
+
+  it("saveRecipe", () =>{
+    const docIngredients: Array<Ingredients> = [new Ingredients(
+      "name",1,"unit"
+    )];
+    const docRecipe = new Recipe(
+      "","duration","text","title","type", docIngredients
+    );
+    
+    
+    component.ingredientGroup.controls.Name.setValue("name");
+    component.ingredientGroup.controls.amount.setValue(1);
+    component.ingredientGroup.controls.unit.setValue("unit");
+
+    component.recipeGroup.controls.duration.value.setValue("duration");
+    component.recipeGroup.controls.text.value.setValue("text");
+    component.recipeGroup.controls.title.value.setValue("title");
+    component.recipeGroup.controls.type.value.setValue("type");
+    component.recipeGroup.controls.ingredients.value.setValue(component.ingredientGroup.value);
+
+    const mockRecipe = component.saveRecipe();
+    expect(mockRecipe).toEqual(docRecipe);
+  })
+
 });

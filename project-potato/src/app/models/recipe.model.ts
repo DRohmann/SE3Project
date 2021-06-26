@@ -1,5 +1,7 @@
 // import * as internal from "stream";
 
+//import { randomBytes } from "crypto";
+
 export class Recipe {
   id: string;
   title: string;
@@ -8,7 +10,7 @@ export class Recipe {
   type: string;
   ingredients: Ingredients[];
 
-  constructor(id: string, title: string, text: string, duration: string, type: string, ingredients: Ingredients[]) {
+  constructor( id:string, title: string, text: string, duration: string, type: string, ingredients: Ingredients[]) {
     this.id = id;
     this.title = title;
     this.text = text;
