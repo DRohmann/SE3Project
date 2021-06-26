@@ -30,7 +30,7 @@ describe('OverviewComponent', () => {
     });
   });
 
-  fit(
+  it(
     'should display Data in Table',
     waitForAsync(() => {
       fixture.detectChanges();
