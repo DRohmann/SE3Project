@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from '../models/recipe.model';
 import { RecipesService } from '../recipes/recipes.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { RecipesService } from '../recipes/recipes.service';
 export class OverviewComponent implements OnInit {
   private service: RecipesService;
 
-  public get recipes() {
+  public get recipes(): Recipe[] {
     return this.service.recipes;
   }
 

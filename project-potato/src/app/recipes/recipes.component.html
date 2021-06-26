@@ -12,7 +12,7 @@
 
 <button id="newIngredient" (click)="addNewIngredient()">Neue Zutat hinzufügen</button>
 
-<form [formGroup]="ingredientGroup" *ngIf="ingredients">
+<form [formGroup]="ingredientGroup" *ngIf="hasIngredients">
     <input type="text"   name="name"   formControlName="name"   placeholder="Titel"/>
     <input type="number" name="amount" formControlName="amount" placeholder="Menge"/>
     <input type="text"   name="unit"   formControlName="unit"   placeholder="Einheit"/>
