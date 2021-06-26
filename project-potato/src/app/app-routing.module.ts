@@ -5,8 +5,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 
 const routes: Routes = [
   { path: '', component: OverviewComponent },
-  { path: 'overview-component', component: OverviewComponent },
-  { path: 'recipe-component', component: RecipesComponent },
+  { path: 'Übersicht', component: OverviewComponent },
+  { path: 'Rezepte', component: RecipesComponent },
 ];
 
 @NgModule({

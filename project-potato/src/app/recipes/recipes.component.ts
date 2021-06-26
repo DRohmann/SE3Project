@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Ingredient } from '../models/ingredient.model';
 import { Recipe } from '../models/recipe.model';
-import { RecipesService } from './recipes.service';
+import { RecipesService } from './recipes-service/recipes.service';
 
 @Component({
   selector: 'app-recipes',
