@@ -4,8 +4,8 @@ import { BehaviorSubject, Observer } from 'rxjs';
 import { initializeApp, getApps, getApp } from "firebase/app"
 import { addDoc, collection, doc, DocumentData, getDocs, getFirestore, setDoc } from "firebase/firestore"
 import { environment } from 'src/environments/environment'
-import { Recipe } from '../models/recipe.model'
-import { Ingredient } from '../models/ingredient.model';
+import { Recipe } from 'src/app/models/recipe.model';
+import { Ingredient } from 'src/app/models/ingredient.model';
 
 @Injectable({
   providedIn: 'root'

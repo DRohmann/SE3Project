@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RecipesService } from './recipes/recipes.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { RecipesService } from './recipes/recipes.service';
 export class AppComponent {
   title = 'project-potato';
 
-  constructor(private recipeModel: RecipesService) {
+  constructor() {
     console.log("AppComponent Constructor");
   }
 

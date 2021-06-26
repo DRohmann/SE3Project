@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OverviewComponent } from './overview.component';
 
 describe('OverviewComponent', () => {
@@ -29,14 +28,4 @@ describe('OverviewComponent', () => {
       expect(test).toBeGreaterThan(0);
     });
   });
-
-  it(
-    'should display Data in Table',
-    waitForAsync(() => {
-      fixture.detectChanges();
-      const compiled = fixture.debugElement.nativeElement;
-
-      expect(compiled.querySelector('td').textContent).toContain('Salzwasser');
-    })
-  );
 });
