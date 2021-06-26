@@ -58,6 +58,7 @@ describe('RecipesService', () => {
     expect(testRecipe.text).toEqual(modelRecipe.text);
     expect(testRecipe.duration).toEqual(modelRecipe.duration);
     expect(testRecipe.type).toEqual(modelRecipe.type);
+    expect(testRecipe.ingredients).toEqual(modelRecipe.ingredients);
   });
 
   it('should map the Recipe-Item correctly', () => {
