@@ -20,12 +20,19 @@ export class RecipesService {
     return this._recipes;
   }
 
-  public async saveExistingRecipe(recipe: Recipe) {
+  public async saveExistingRecipe(recipe: Recipe): Promise<void> {
     const existingDoc = await setDoc(doc(this._db, "Recipes", recipe.id), this.mapModelToDoc(recipe));
   }
 
-  public async saveNewRecipe(recipe: Recipe) {
+  public async saveNewRecipe(recipe: Recipe): Promise<void> {
     const newDoc = await addDoc(collection(this._db, "Recipes"), this.mapModelToDoc(recipe));
+  }
+
+  public async getCollection(): Promise<void> {
+    const querySnapshot = await getDocs(collection(this._db, "Rezepte"));
+    querySnapshot.forEach((doc) => {
+      this._recipes.push(this.mapDocToModel(doc));
+    });
   }
 
   public mapDocToModel(documentData: DocumentData): Recipe {
@@ -63,7 +70,6 @@ export class RecipesService {
   }
 
   constructor() {
-    console.log("RecipesService Constructor")
     if (!getApps().length) {
       this._firebaseApp = initializeApp(environment.firebase);
     } else {
@@ -72,14 +78,5 @@ export class RecipesService {
     this._db = getFirestore();
     this._recipes = [];
     this.getCollection();
-  }
-
-  public async getCollection() {
-    console.log("RecipeService getCollection");
-    const querySnapshot = await getDocs(collection(this._db, "Rezepte"));
-    querySnapshot.forEach((doc) => {
-      this._recipes.push(this.mapDocToModel(doc));
-    });
-    console.log(this._recipes);
   }
 }
