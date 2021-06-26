@@ -24,6 +24,7 @@ export class RecipesComponent implements OnInit {
 
   constructor(builder: FormBuilder) {
     this.service = new RecipesService();
+
     this.recipeGroup = builder.group({
       title: new FormControl(),
       text: new FormControl(),
@@ -35,6 +36,7 @@ export class RecipesComponent implements OnInit {
       amount: new FormControl(),
       unit: new FormControl(),
     });
+    
     this.hasIngredients = false;
   }
 
