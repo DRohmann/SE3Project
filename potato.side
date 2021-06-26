@@ -201,6 +201,293 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "d515a232-64f5-4dfd-a8a9-1d2dc4db2401",
+    "name": "addRecipe2",
+    "commands": [{
+      "id": "8562900d-6b63-4517-af91-647376b3d1bc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:4200/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0afeb2cc-8ec3-44d7-86d0-83c264f26a4a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "833x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "feea5428-ce43-4587-93bf-c50cc7936fb1",
+      "comment": "",
+      "command": "click",
+      "target": "id=recipe",
+      "targets": [
+        ["id=recipe", "id"],
+        ["css=#recipe", "css:finder"],
+        ["xpath=//button[@id='recipe']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Rezepte')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d836a177-e09d-4190-99fb-b2c9d00b2367",
+      "comment": "",
+      "command": "click",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=.ng-untouched:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c28b1bd9-f3f6-4b29-92a3-ad745a66f44f",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=.ng-untouched:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Apfelmus"
+    }, {
+      "id": "fb457b09-fee3-4604-9f01-6e3a3dd41c6e",
+      "comment": "",
+      "command": "type",
+      "target": "name=text",
+      "targets": [
+        ["name=text", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='text']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Äpfel klein schneiden und bis zum Zerfallen kochen"
+    }, {
+      "id": "25a10bc7-8e39-47e9-bba6-370d39a8e950",
+      "comment": "",
+      "command": "type",
+      "target": "name=duration",
+      "targets": [
+        ["name=duration", "name"],
+        ["css=.ng-untouched:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='duration']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "20 Minuten"
+    }, {
+      "id": "8a349338-aa3d-4fec-8ade-27313e9b9542",
+      "comment": "",
+      "command": "type",
+      "target": "name=type",
+      "targets": [
+        ["name=type", "name"],
+        ["css=.ng-untouched", "css:finder"],
+        ["xpath=//input[@name='type']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Nachtisch"
+    }, {
+      "id": "d690438d-767a-4498-96cd-d22f8486284e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newIngredient",
+      "targets": [
+        ["id=newIngredient", "id"],
+        ["css=#newIngredient", "css:finder"],
+        ["xpath=//button[@id='newIngredient']", "xpath:attributes"],
+        ["xpath=//app-recipes/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Neue Zutat hinzufügen')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b702cda-39cc-4fe5-850f-0f4e29c66a35",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=newIngredient",
+      "targets": [
+        ["id=newIngredient", "id"],
+        ["css=#newIngredient", "css:finder"],
+        ["xpath=//button[@id='newIngredient']", "xpath:attributes"],
+        ["xpath=//app-recipes/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Neue Zutat hinzufügen')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b98a98c-079e-49e1-a525-124d9c76e01b",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=newIngredient",
+      "targets": [
+        ["id=newIngredient", "id"],
+        ["css=#newIngredient", "css:finder"],
+        ["xpath=//button[@id='newIngredient']", "xpath:attributes"],
+        ["xpath=//app-recipes/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Neue Zutat hinzufügen')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b8e3901-8d50-4793-b8bd-0180e21a98a7",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=.ng-untouched:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9377b3aa-8f63-4320-bbfc-29d6826c285f",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["name=name", "name"],
+        ["css=.ng-untouched:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='name']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Apfel"
+    }, {
+      "id": "64f5e7e3-ec8a-44f3-b081-bc00b82a22bd",
+      "comment": "",
+      "command": "click",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eff3b68-00bd-4a51-9f22-e68ffa9a335b",
+      "comment": "",
+      "command": "type",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "dad05648-b4be-4049-8673-590686dabb22",
+      "comment": "",
+      "command": "click",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6395578-0e3e-4951-892e-978c92e76eef",
+      "comment": "",
+      "command": "type",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "6da25745-23c5-4228-89fb-c152ac885dd4",
+      "comment": "",
+      "command": "click",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09402611-ac4e-487c-9f37-0dcd24097d7a",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f82143f-f05a-4baf-9e73-90a4f1b6ffeb",
+      "comment": "",
+      "command": "type",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "bac8d4d1-92c5-43dd-b7e8-cbae739f95d7",
+      "comment": "",
+      "command": "click",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.ng-untouched:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83113fd0-efc1-447e-9862-8e8875857ee0",
+      "comment": "",
+      "command": "click",
+      "target": "name=unit",
+      "targets": [
+        ["name=unit", "name"],
+        ["css=.ng-untouched", "css:finder"],
+        ["xpath=//input[@name='unit']", "xpath:attributes"],
+        ["xpath=//form[2]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc9ff407-c7a0-4220-a150-1b6d1e6b4881",
+      "comment": "",
+      "command": "type",
+      "target": "name=unit",
+      "targets": [
+        ["name=unit", "name"],
+        ["css=.ng-untouched", "css:finder"],
+        ["xpath=//input[@name='unit']", "xpath:attributes"],
+        ["xpath=//form[2]/input[3]", "xpath:position"]
+      ],
+      "value": "Stück"
+    }, {
+      "id": "468fafbd-ffd1-4360-b198-d25b7c6f540f",
+      "comment": "",
+      "command": "click",
+      "target": "id=newRecipe",
+      "targets": [
+        ["id=newRecipe", "id"],
+        ["css=#newRecipe", "css:finder"],
+        ["xpath=//button[@id='newRecipe']", "xpath:attributes"],
+        ["xpath=//app-recipes/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Rezept speichern')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "76c0b7ad-1d26-4e66-b01e-5342512d62c6",
