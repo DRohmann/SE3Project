@@ -1,6 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DocumentData, QuerySnapshot } from "firebase/firestore"
-import { never } from 'rxjs';
 
 import { Recipe } from '../models/recipe.model';
 import { Ingredient } from '../models/ingredient.model';
@@ -61,6 +59,7 @@ describe('RecipesService', () => {
     expect(testRecipe.text).toEqual(modelRecipe.text);
     expect(testRecipe.duration).toEqual(modelRecipe.duration);
     expect(testRecipe.type).toEqual(modelRecipe.type);
+    expect(testRecipe.ingredients).toEqual(modelRecipe.ingredients);
   });
 
   it('should map the Recipe-Item correctly', () => {
