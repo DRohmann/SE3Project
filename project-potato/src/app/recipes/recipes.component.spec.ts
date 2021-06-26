@@ -45,24 +45,23 @@ describe('RecipesComponent', () => {
     expect(button.innerHTML).toContain('Rezept speichern');
   })
 
-  it("saveRecipe", () =>{
+  fit("saveRecipe", () =>{
     const docIngredients: Array<Ingredients> = [new Ingredients(
       "name",1,"unit"
     )];
     const docRecipe = new Recipe(
-      "","duration","text","title","type", docIngredients
+      "default","title","text","duration","type", docIngredients
     );
     
     
-    component.ingredientGroup.controls.Name.setValue("name");
+    component.ingredientGroup.controls.name.setValue("name");
     component.ingredientGroup.controls.amount.setValue(1);
     component.ingredientGroup.controls.unit.setValue("unit");
 
-    component.recipeGroup.controls.duration.value.setValue("duration");
-    component.recipeGroup.controls.text.value.setValue("text");
-    component.recipeGroup.controls.title.value.setValue("title");
-    component.recipeGroup.controls.type.value.setValue("type");
-    component.recipeGroup.controls.ingredients.value.setValue(component.ingredientGroup.value);
+    component.recipeGroup.controls.duration.setValue("duration");
+    component.recipeGroup.controls.text.setValue("text");
+    component.recipeGroup.controls.title.setValue("title");
+    component.recipeGroup.controls.type.setValue("type");
 
     const mockRecipe = component.saveRecipe();
     expect(mockRecipe).toEqual(docRecipe);

@@ -41,10 +41,10 @@ export class RecipesComponent implements OnInit {
   }
 
   public saveRecipe(){
-    var ingredientsArray: Array<Ingredients> = [new Ingredients(this.ingredientGroup.controls.Name.value, this.ingredientGroup.controls.amount.value, this.ingredientGroup.controls.unit.value)];
+    var ingredientsArray: Array<Ingredients> = [new Ingredients(this.ingredientGroup.controls.name.value, this.ingredientGroup.controls.amount.value, this.ingredientGroup.controls.unit.value)];
     var recipe = new Recipe(this.DEFAULT_ID, this.recipeGroup.controls.title.value, this.recipeGroup.controls.text.value, this.recipeGroup.controls.duration.value, this.recipeGroup.controls.type.value, ingredientsArray );
-    this.service.saveNewRecipe(recipe); 
-    return recipe;
+    this.service.saveNewRecipe(recipe);
+    return recipe; 
   }
 
   ngOnInit(): void { 
