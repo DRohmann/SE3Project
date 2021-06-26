@@ -4,7 +4,7 @@
         <th>Bezeichnung</th>
         <th>Zubereitungsdauer</th>
     </thead>
-    <tbody *ngFor="let recipe of this.service.recipes">
+    <tbody *ngFor="let recipe of recipes">
       <tr>
           <td>{{ recipe.title }}</td>
           <td>{{ recipe.text }}</td>

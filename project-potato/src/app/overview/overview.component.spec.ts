@@ -24,7 +24,7 @@ describe('OverviewComponent', () => {
 
   it('should get recipes from recipe.service', () => {
     fixture.whenStable().then(() => {
-      const test = component.service.recipes.length;
+      const test = component.recipes.length;
       fixture.detectChanges();
       expect(test).toBeGreaterThan(0);
     });
